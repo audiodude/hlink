@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Shorten a hydra.ojack.xyz link: hydra-link 'https://hydra.ojack.xyz/?code=...'
+# Requires HYDRA_LINK_TOKEN (the worker's ADMIN_TOKEN secret).
+set -euo pipefail
+
+if [[ $# -ne 1 ]]; then
+  echo "usage: hydra-link '<hydra url>'" >&2
+  exit 2
+fi
+: "${HYDRA_LINK_TOKEN:?HYDRA_LINK_TOKEN is not set}"
+endpoint="${HYDRA_LINK_ENDPOINT:-https://h.audiodude.xyz/}"
+
+printf '%s' "$1" | curl -sS --fail-with-body \
+  -H "Authorization: Bearer $HYDRA_LINK_TOKEN" \
+  -H "Content-Type: text/plain" \
+  --data-binary @- "$endpoint"

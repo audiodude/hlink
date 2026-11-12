@@ -1,0 +1,12 @@
+name = "hlink"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+account_id = "059181f68081f9c0fb55c5c77a969c11"
+workers_dev = false
+
+routes = [{ pattern = "h.audiodude.xyz", custom_domain = true }]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hlink"
+database_id = "10639ce9-8ba0-4100-b090-4a2b6706b2ad"
