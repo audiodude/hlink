@@ -4,7 +4,7 @@ Link shortener for [Hydra](https://hydra.ojack.xyz) sketches, served at `h.audio
 
 ```
 $ hydra-link 'https://hydra.ojack.xyz/?code=...'
-h.audiodude.xyz/47f3d3
+https://h.audiodude.xyz/47f3d3
 ```
 
 - `GET /<id>` sends a 302 redirect to the stored URL.

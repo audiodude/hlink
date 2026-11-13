@@ -47,7 +47,7 @@ async function shorten(request, env) {
 }
 
 function shortResponse(request, id) {
-  return new Response(`${new URL(request.url).host}/${id}\n`, {
+  return new Response(`https://${new URL(request.url).host}/${id}\n`, {
     headers: { "Content-Type": "text/plain" },
   });
 }
